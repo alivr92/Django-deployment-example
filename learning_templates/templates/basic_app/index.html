@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% load my_custom_filters %}
+
+    {% block b_title %}
+        index
+    {% endblock %}
+
+{% block block_body %}
+    <h1>Here is INDEX PAGE</h1>
+    <h3> {{ text|cut:'Hello' }}    </h3>
+    <h3> {{ number }}    </h3>
+{% endblock %}
+

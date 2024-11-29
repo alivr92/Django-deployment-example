@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block b_title %}
+            {# by this template tag we can specify title of each page! #}
+            BASE
+        {% endblock %}
+    </title>
+</head>
+<header>
+    HERE IS HEADER
+</header>
+<body>
+    <p>
+        <h3>List of Pages:</h3>
+        <a href="{% url 'basic_app:base' %}">BASE PAGE</a><br>
+        <a href="{% url 'index' %}">INDEX PAGE</a><br>
+        <a href="{% url 'basic_app:relative' %}">RELATIVE PAGE</a><br>
+        <a href="{% url 'admin:index' %}">Admin</a><br>
+        <a href="{% url 'basic_app:other' %}">OTHER PAGE</a><br>
+    </p>
+<p>
+      {% block block_body %}
+    {#         anything can be inherited from the base and will show here    #}
+          Nothing ... (Here is BASE PAGE)
+      {% endblock %}
+</p>
+</body>
+
+<footer>
+    HERE IS FOOTER
+</footer>
+</html>
